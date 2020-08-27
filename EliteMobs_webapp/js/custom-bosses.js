@@ -23,7 +23,11 @@ let entityTypes = [
     "WITCH",
     "WITHER_SKELETON",
     "ZOMBIE",
-    "ZOMBIFIED_PIGLIN"
+    "ZOMBIFIED_PIGLIN",
+    "PIGLIN",
+    "HOGLIN",
+    "ZOGLIN",
+    "GHAST"
 ]
 
 let trails = [
@@ -164,6 +168,7 @@ window.addEventListener('load', function () {
     autocomplete(document.getElementById("mainHand"), mainHand);
     autocomplete(document.getElementById("offHand"), offhand);
     addStringLine(document.getElementById("onDamagedMessage"));
+
     addStringLine(document.getElementById("onDamageMessage"));
     addStringLine(document.getElementById("onDeathCommands"));
     addStringLine(document.getElementById("uniqueLootList"));
@@ -191,7 +196,7 @@ function generateRegionalBoss() {
 function generateCustomBoss() {
 
     let config = sharedConfigFeatures();
-    config += getString("isPersistent");
+    config += getPrimal("isPersistent");
     config += getString("spawnChance");
     console.log(config);
 
@@ -203,35 +208,36 @@ function generateCustomBoss() {
 function sharedConfigFeatures() {
     let config = "";
 	
-    config += getString("isEnabled");
+    config += getPrimal("isEnabled");
     config += getString("entityType");
     config += getString("name");
-    config += getString("level");
-    config += getString("timeout");
-    config += getString("healthMultiplier");
-    config += getString("damageMultiplier");
+    config += getPrimal("level");
+    config += getPrimal("timeout");
+    config += getPrimal("healthMultiplier");
+    config += getPrimal("damageMultiplier");
     config += getString("helmet");
     config += getString("chestplate");
     config += getString("leggings");
     config += getString("boots");
     config += getString("mainHand");
     config += getString("offHand");
-    config += getString("isBaby");
+    config += getPrimal("isBaby");
     config += getPowers("powers");
     config += getString("spawnMessage");
     config += getString("deathMessage");
     config += getString("escapeMessage");
     config += getString("locationMessage");
     config += getStringList("uniqueLootList");
-    config += getString("dropsEliteMobsLoot");
-    config += getString("dropsVanillaLoot");
+    config += getPrimal("dropsEliteMobsLoot");
+    config += getPrimal("dropsVanillaLoot");
     config += getStringList("trails");
     config += getStringList("onDamageMessage");
     config += getStringList("onDamagedMessage");
-    config += getString("mountEntity");
+    config += getString("mountedEntity");
     config += getString("announcementPriority");
-    config += getString("followDistance");
+    config += getPrimal("followDistance");
     config += getStringList("onDeathCommands");
+    config += getString("disguise");
 	
 	download(`${getValue("name")}.yml`, config);
 	

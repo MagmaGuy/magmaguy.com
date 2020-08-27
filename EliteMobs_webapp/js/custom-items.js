@@ -86,14 +86,15 @@ window.addEventListener('load', function () {
 
 function generateCustomItem() {
     let config = "";
-    config += getString("isEnabled");
+    config += getPrimal("isEnabled");
     config += getString("name");
+    config += getString("material");
     config += getStringList("lore");
     config += getStringList("enchantments");
     config += getStringList("potionEffects");
-    config += getString("dropWeight");
-    config += getString("scalability");
-    config += getString("itemType");
+    config += getPrimal("dropWeight");
+    config += getPrimal("scalability");
+    config += getPrimal("itemType");
 
     let outputDisplay = document.getElementById("output");
     outputDisplay.innerText = config;

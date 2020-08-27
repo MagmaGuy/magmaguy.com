@@ -483,13 +483,13 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="mountEntity" class="col-sm-4 col-form-label">
+                    <label for="mountedEntity" class="col-sm-4 col-form-label">
                         <a href="#" data-toggle="tooltip" data-placement="left"
                            title="Click for wiki entry! Sets entity that the boss rides when it spawns. Can be an entity
                             type from the Spigot API or the bossfile name of another boss."
-                           onclick="customBossLinkFactory('mountEntity')">Mount Entity:</a></label>
+                           onclick="customBossLinkFactory('mountedEntity')">Mount Entity:</a></label>
                     <div class="col-sm-8 autocomplete">
-                        <input type="text" class="form-control" id="mountEntity" placeholder="HORSE">
+                        <input type="text" class="form-control" id="mountedEntity" placeholder="HORSE">
                     </div>
                 </div>
 
@@ -552,6 +552,18 @@
                            onclick="regionalBossLinkFactory('spawnCooldown')">Leash radius:</a></label>
                     <div class="col-sm-8 autocomplete">
                         <input type="text" class="form-control" id="leashRadius" placeholder="30">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="disguise" class="col-sm-4 col-form-label">
+                        <a href="#" data-toggle="tooltip"
+                           data-placement="left"
+                           title="Click for wiki entry! Sets LibsDisguises disguise that this custom boss will use.
+                            Will only work if you use LibsDisguises on your server."
+                           onclick="customBossLinkFactory('disguise')">Disguise:</a></label>
+                    <div class="col-sm-8 autocomplete">
+                        <input type="text" class="form-control" id="disguise" placeholder="30">
                     </div>
                 </div>
 

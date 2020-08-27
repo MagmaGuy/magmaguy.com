@@ -71,21 +71,20 @@ window.addEventListener('load', function () {
 function generateTreasureChest() {
     let config = "";
 
-    config += getString("isEnabled");
+    config += getPrimal("isEnabled");
     config += getString("chestType");
     config += getString("facing");
     config += getString("dropStyle");
-    config += getString("restockTimer");
+    config += getPrimal("restockTimer");
     config += getStringList("lootList");
-    config += getString("mimicChance");
+    config += getPrimal("mimicChance");
     config += getStringList("lootList");
     config += getStringList("effects");
     config += getString("location")
 
     let outputDisplay = document.getElementById("output");
     outputDisplay.innerText = config;
-	
-	download(`${treasure_chest.yml`, config);
+	download(`${getValue("name")}.yml`, config);
 }
 
 function treasureChestLinkFactory(id) {

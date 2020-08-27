@@ -17,6 +17,12 @@ function getString(id) {
     return id + ": \"" + getValue(id) + "\"\n";
 }
 
+function getPrimal(id) {
+    if (document.getElementById(id).value === "")
+        return "";
+    return id + ": " + getValue(id) + "\n";
+}
+
 function getValue(element) {
     return document.getElementById(element).value;
 }
